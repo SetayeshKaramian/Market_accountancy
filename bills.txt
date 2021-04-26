@@ -1,0 +1,6 @@
+seta
+item:bowl       number:3       total price:60
+item:laptop       number:1       total price:4000
+item:pen       number:2       total price:100
+ava
+item:laptop       number:1       total price:4000

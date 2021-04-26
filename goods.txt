@@ -1,0 +1,6 @@
+laptop,asus,4000,8,33
+pen,Russell,50,8,1122
+phone,apple,388,0,245
+book,penguin,30,8,11223
+glass,shiny,20,0,12341
+bowl,shiny,20,97,12678

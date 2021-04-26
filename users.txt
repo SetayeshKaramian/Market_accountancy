@@ -1,0 +1,5 @@
+seta,1231,customer,Free
+ava,1231,customer,Free
+Admin,1231,admin,Free
+nava,1231,customer,Free
+amin,1231,customer,block
