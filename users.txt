@@ -1,5 +1,5 @@
-seta,1231,customer,Free
-ava,1231,customer,Free
-Admin,1231,admin,Free
-nava,1231,customer,Free
-amin,1231,customer,block
+username,password,role_type,flag
+seta,b'e8a2cc72af41739ddefb197e1174cc38191ca2bd69f5672279f3d627781bafda',customer,Free
+Admin,b'e8a2cc72af41739ddefb197e1174cc38191ca2bd69f5672279f3d627781bafda',admin,Free
+Admin2,b'e8a2cc72af41739ddefb197e1174cc38191ca2bd69f5672279f3d627781bafda',admin,Free
+javad,b'e8a2cc72af41739ddefb197e1174cc38191ca2bd69f5672279f3d627781bafda',customer,block

@@ -4,3 +4,11 @@ item:laptop       number:1       total price:4000
 item:pen       number:2       total price:100
 ava
 item:laptop       number:1       total price:4000
+seta
+item:book       number:2       total price:60
+javad
+item:candle       number:2       total price:60
+item:door       number:1       total price:1345
+seta
+item:book       number:5       total price:150
+item:pen       number:2       total price:100

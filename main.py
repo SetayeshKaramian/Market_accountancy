@@ -1,44 +1,40 @@
 import users
+from users import Users
 import goods
+from goods import Goods
+import administration
+import customer
 
 """login"""
 print("\n", "Welcome to Market!".center(170))
-the_key = False
-menu_login = None
+key = False
+menu_option = None
 
-while menu_login != 0:
-    menu_login = int(input("0.quit, 1.log in, 2.sing in, 3.Admin menu, 4.customer menu: "))
+while menu_option != 0:
+    menu_option = int(input("0.quit, 1.log in, 2.sing in, 3.Admin menu, 4.customer menu: "))
 
-    if menu_login == 1:
-        username = input("Please enter your username: ")
-        user = users.username_checker(username)
-        "check if user is admin or customer. ask admin to enter password and show customer his/her choices."
+    if menu_option == 1:
+        "check if user exists"
+        user = Users.check_username(users.lst_usernames)
+        "check if user is ban or not"
+        Users.check_block(user)
+        "check if user is admin or costumer. if user was admin ask for password."
         if user.role_type == "admin":
-            the_key = users.password_checker(user)
+            key = Users.password_checker(user, users.lst_users)
         else:
-            "options for customer user without entering password"
-            customer_choice = None
-            while customer_choice != 0:
-                customer_choice = int(input("you have entered as a customer. 0.main menu, 1.see goods,"
-                                            " 2.login to have full access to customer menu"))
-                if customer_choice == 1:
-                    goods.print_goods()
-                elif customer_choice == 2:
-                    the_key = users.password_checker(user)
+            print("\n\nWELCOME!\nyou have entered as a customer")
+            key = "customer"
 
-    if menu_login == 2:
-        users.add_user()
-        print("user added")
+    if menu_option == 2:
+        Users.register(users.lst_usernames)
 
         """Admin menu"""
-    if menu_login == 3:
+    if menu_option == 3:
         try:
-            assert the_key == "king key"
+            assert key == "king key"
             print('\n\n', "Welcome to the administration of market!".center(170))
             "check for empty inventories"
-            for i in goods.the_goods_lst:
-                if i.inventory == 0:
-                    print(f"{i.name} inventory is empty!")
+            administration.warning_empty_inventory()
 
             option = None
             while option != 0:
@@ -46,34 +42,31 @@ while menu_login != 0:
 
                 "get info for good and check for right info"
                 if option == 1:
-                    data = input("Please enter: name, brand, price, inventory, barcode: ")
-                    if goods.check_numberof_orient_good(data) is True:
-                        goods.add_good(data)
-                        print("good has been added successfully")
-                    else:
-                        print("you didn't fill all the infos!\nPlease try again.")
+                    administration.get_data_new_good()
 
                 if option == 2:
-                    goods.print_bills()
+                    administration.print_bills()
 
         except AssertionError:
-            print("only Admin have access to this menu")
+            print("\nonly Admin have access to this menu\n")
 
     """customer menu"""
-    if menu_login == 4:
+    if menu_option == 4:
         try:
-            assert the_key == True
-            print("\n", "Welcome to the market!\n\n".center(170))
+            assert key == "customer"
+            print("\n", "Welcome to customer menu!\n\n".center(170))
             option = None
             while option != 0:
                 option = int(input("please choose your command: 0.main menu,"
                                    " 1.see the list of goods and add to cart: "))
                 if option == 1:
-                    goods.print_goods()
+                    Goods.print_goods()
                     command = input("please choose your command: a.customer menu, b.shopping: ")
 
                     "shopping part"
                     if command == 'b':
+                        print("enter your password for access to shopping")
+                        Users.password_checker(user, users.lst_users)
                         print("whenever you want, you can quit or go to finish"
                               " your shopping to see your bill and total price")
                         print("0.quit, 1.finish shopping\n")
@@ -92,13 +85,16 @@ while menu_login != 0:
                                 the_good = int(the_good)
                                 break
                             "adding price of one ordered good to total price"
-                            price = goods.shopping(the_good)
+                            price = customer.shopping(the_good)
                             if price is None:
+                                pass
+                            else:
                                 total_price += price
+
                         """after finishing shopping add customer bill to total bill and save it,
                         show the customer the total price and also print customer bill"""
                         if the_good == 1:
-                            goods.append_to_total_bills()
+                            customer.append_to_total_bills()
                             print(f"\ntotal price: {total_price}\n")
                             print("your bill:\n")
                             with open('customer_bill.txt') as bill:
@@ -108,5 +104,5 @@ while menu_login != 0:
             print("You can enter this menu after log in as a customer")
 
 "after all, rewrite the goods file to save changes in inventory or save new goods that admin adds"
-if menu_login == 0:
+if menu_option == 0:
     goods.rewrite_goods()

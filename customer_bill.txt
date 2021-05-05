@@ -1,0 +1,3 @@
+seta
+item:book       number:5       total price:150
+item:pen       number:2       total price:100
