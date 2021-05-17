@@ -1,0 +1,8 @@
+phone,apple,388,0,245
+book,penguin,30,52,11223
+glass,shiny,20,0,12341
+bowl,shiny,20,100,12678
+jafar,plasticy,60,555,768
+akbar,teryaky,2,45670,3939
+asgar,kaftarbaz,570,4565,8364
+teryak,afghan,78,60,345

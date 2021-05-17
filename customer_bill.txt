@@ -1,0 +1,4 @@
+seta
+item:bowl       number:4       total price:80
+item:book       number:6       total price:180
+item:teryak       number:10       total price:780

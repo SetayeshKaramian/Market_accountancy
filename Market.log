@@ -1,0 +1,22 @@
+2021-05-17 09:32:48,379: users: blocked user ava tried to enter 
+2021-05-17 15:16:29,831: users: ERROR: blocked user ava tried to enter 
+2021-05-17 15:21:45,970: __main__: INFO: seta sing in as a customer 
+2021-05-17 15:21:55,149: users: ERROR: blocked user seta tried to enter 
+2021-05-17 15:21:55,149: __main__: INFO: customer seta login 
+2021-05-17 15:22:04,708: users: INFO: user seta entered password wrong 
+2021-05-17 15:22:10,448: __main__: INFO: customer seta entered completely. 
+2021-05-17 15:22:35,438: users: ERROR: blocked user seta tried to enter 
+2021-05-17 15:22:35,438: __main__: INFO: customer seta login 
+2021-05-17 15:22:39,767: __main__: INFO: customer seta entered completely. 
+2021-05-17 15:23:00,421: __main__: INFO: customer seta shopped. 
+2021-05-17 15:24:30,845: users: ERROR: blocked user seta tried to enter 
+2021-05-17 15:24:30,846: __main__: INFO: customer seta login 
+2021-05-17 15:24:36,364: __main__: INFO: customer seta entered completely. 
+2021-05-17 15:24:57,520: __main__: INFO: customer seta shopped. 
+2021-05-17 15:26:11,243: users: ERROR: blocked user seta tried to enter 
+2021-05-17 15:26:11,243: __main__: INFO: customer seta login 
+2021-05-17 15:26:17,503: __main__: INFO: customer seta entered completely. 
+2021-05-17 15:26:36,846: __main__: INFO: customer seta shopped. 
+2021-05-17 15:26:36,846: __main__: INFO: customer seta shopped. 
+2021-05-17 15:26:36,846: __main__: INFO: customer seta shopped. 
+2021-05-17 15:26:36,846: __main__: INFO: customer seta shopped. 
